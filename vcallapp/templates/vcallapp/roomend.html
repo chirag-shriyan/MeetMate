@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetMate | End</title>
+    <link rel="icon" href="{% static 'images/video-chat.png' %}">
+    <style>
+#join-btn{
+  background-color: #f6391c;
+  font-size: 18px;
+  padding: 15px 20px;
+  border: none;
+  color: #fff;
+
+  position: fixed;
+  top: 5rem;
+  border-radius: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.endo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+}
+    </style>
+</head>
+<body>
+<div class="endo">
+    <h1 style="text-align: center;">Meeting has ended</h1>
+    <a href="{% url 'main' %}" style="left: 50%;">
+        <button id="join-btn">Back to Home Screen</button>
+    </a>
+</div>
+
+</body>
+</html>

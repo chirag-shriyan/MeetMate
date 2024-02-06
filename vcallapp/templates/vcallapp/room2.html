@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MeetMate | Room</title>
+    <link rel="icon" href="{% static 'images/video-chat.png' %}">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "styles/main2.css" %}'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "styles/room2.css" %}'>
+</head>
+
+<body>
+
+    <header id="nav">
+       <div class="nav--list">
+            <button id="members__button">
+               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#ede0e0"><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z"/></svg>
+            </button>
+            <a href="lobby.html">
+                <h3 id="logo">
+                    <img src="{% static 'images/video-chat.png' %}" alt="Site Logo">
+                    <span style="font-family: 'Cedarville Cursive', cursive;">MeetMate</span>
+                </h3>
+            </a>
+       </div>
+
+        <div id="nav__links">
+            <button id="chat__button"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="#ede0e0" clip-rule="evenodd"><path d="M24 20h-3v4l-5.333-4h-7.667v-4h2v2h6.333l2.667 2v-2h3v-8.001h-2v-2h4v12.001zm-15.667-6l-5.333 4v-4h-3v-14.001l18 .001v14h-9.667zm-6.333-2h3v2l2.667-2h8.333v-10l-14-.001v10.001z"/></svg></button>
+            
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="room__container">
+            <section id="members__container">
+
+            <div id="members__header">
+                <p>Participants</p>
+                <strong id="members__count"></strong>
+            </div>
+
+            <div id="member__list">
+            </div>
+
+            </section>
+
+            <section id="stream__container">
+
+                <div id="stream__box"></div>
+
+
+                <section id="streams__container"></section>
+
+                <button id="join-btn">Join Stream</button>
+                <div class="stream__actions">
+                    <button id="camera-btn" class="">
+                       <span id="vcb" style="padding-top: 5px ;" class="material-symbols-outlined">videocam</span>
+                        
+                    </button>
+                    <button id="mic-btn" class="">
+                        <span id="mcb" style="padding-top: 5px ;" class="material-symbols-outlined">mic</span>
+                       
+                    </button>
+                    <button id="screen-btn" class="">
+                        <span  style="padding-top: 5px ;" class="material-symbols-outlined">present_to_all</span>
+                       
+                    </button>
+                    <button id="leave-btn" style="background-color: #FF5050;">
+                        <span style="padding-top: 5px ;" class="material-symbols-outlined">call_end</span>
+                        
+                    </button>
+                </div>
+
+                
+            </section>
+
+            <section id="messages__container">
+
+                <div id="messages"></div>
+
+                <form id="message__form">
+                    <input type="text" name="message" placeholder="Send a message...." />
+                </form>
+
+            </section>
+        </div>
+    </main>
+    
+</body>
+<script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.20.0.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/agora-rtm-sdk-1.5.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/room.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/room_rtm.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/room_rtc.js' %}"></script>
+</html>
